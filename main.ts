@@ -38,7 +38,7 @@ function easy () {
         . . . . c b b b 6 6 c . . . . . 
         . . . . . c a 6 6 b c . . . . . 
         . . . . . . . c c c . . . . . . 
-        `, randint(0, 120), 0)
+        `, 0, 0)
     scene.setBackgroundImage(img`
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
