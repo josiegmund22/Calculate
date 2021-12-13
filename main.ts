@@ -170,8 +170,8 @@ function hard () {
 }
 let easyMeteor: Sprite = null
 let easySprite: Sprite = null
-let game2 = game.askForString("Select you difficulty. easy or hard?", 4)
-if (game2 == "easy") {
+game.splash("Press \"A' for Easy, Press \"B\" for Hard ")
+if (true) {
     easy()
 } else {
     hard()
