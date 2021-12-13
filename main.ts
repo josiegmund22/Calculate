@@ -38,7 +38,7 @@ function easy () {
         . . . . c b b b 6 6 c . . . . . 
         . . . . . c a 6 6 b c . . . . . 
         . . . . . . . c c c . . . . . . 
-        `, 50, 50)
+        `, randint(0, 120), 0)
     scene.setBackgroundImage(img`
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -161,6 +161,9 @@ function easy () {
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         `)
+    for (let index = 0; index < 4; index++) {
+    	
+    }
 }
 function hard () {
     scene.setBackgroundImage(img`
