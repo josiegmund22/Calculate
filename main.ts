@@ -1,6 +1,24 @@
 function easy () {
+    easySprite = sprites.create(img`
+        ....ffffff.........ccc..
+        ....ff22ccf.......cc4f..
+        .....ffccccfff...cc44f..
+        ....cc24442222cccc442f..
+        ...c9b4422222222cc422f..
+        ..c999b2222222222222fc..
+        .c2b99111b222222222c22c.
+        c222b111992222ccccccc22f
+        f222222222222c222ccfffff
+        .f2222222222442222f.....
+        ..ff2222222cf442222f....
+        ....ffffffffff442222c...
+        .........f2cfffc2222c...
+        .........fcc2ffffffff...
+        ..........fc2ffff.......
+        ...........fffff........
+        `, SpriteKind.Player)
+    controller.moveSprite(easySprite)
     easySprite.setStayInScreen(true)
-    info.setLife(3)
     scene.setBackgroundImage(img`
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -123,54 +141,44 @@ function easy () {
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         `)
-    easySprite = sprites.create(img`
-        ....ffffff.........ccc..
-        ....ff22ccf.......cc4f..
-        .....ffccccfff...cc44f..
-        ....cc24442222cccc442f..
-        ...c9b4422222222cc422f..
-        ..c999b2222222222222fc..
-        .c2b99111b222222222c22c.
-        c222b111992222ccccccc22f
-        f222222222222c222ccfffff
-        .f2222222222442222f.....
-        ..ff2222222cf442222f....
-        ....ffffffffff442222c...
-        .........f2cfffc2222c...
-        .........fcc2ffffffff...
-        ..........fc2ffff.......
-        ...........fffff........
-        `, SpriteKind.Player)
-    controller.moveSprite(easySprite)
+    info.setLife(3)
+    info.setScore(0)
+    easyMeteor = sprites.createProjectileFromSide(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . c c c c . . 
+        . c c c c c . c c c c c f c c . 
+        c c a c c c c c 8 f f c f f c c 
+        c a f a a c c a f f c a a f f c 
+        c a 8 f a a c a c c c a a a a c 
+        c b c f a a a a a c c c c c c c 
+        c b b a a c f 8 a c c c 8 c c c 
+        . c b b a b c f a a a 8 8 c c . 
+        . . . . a a b b b a a 8 a c . . 
+        . . . . c b c a a c c b . . . . 
+        . . . . b b c c a b b a . . . . 
+        . . . . b b a b a 6 a . . . . . 
+        . . . . c b b b 6 6 c . . . . . 
+        . . . . . c a 6 6 b c . . . . . 
+        . . . . . . . c c c . . . . . . 
+        `, 50, 50)
     while (info.life() > 0) {
-        easyMeteor = sprites.createProjectileFromSide(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . c c c c . . 
-            . c c c c c . c c c c c f c c . 
-            c c a c c c c c 8 f f c f f c c 
-            c a f a a c c a f f c a a f f c 
-            c a 8 f a a c a c c c a a a a c 
-            c b c f a a a a a c c c c c c c 
-            c b b a a c f 8 a c c c 8 c c c 
-            . c b b a b c f a a a 8 8 c c . 
-            . . . . a a b b b a a 8 a c . . 
-            . . . . c b c a a c c b . . . . 
-            . . . . b b c c a b b a . . . . 
-            . . . . b b a b a 6 a . . . . . 
-            . . . . c b b b 6 6 c . . . . . 
-            . . . . . c a 6 6 b c . . . . . 
-            . . . . . . . c c c . . . . . . 
-            `, 50, 50)
+        easyMeteor.setVelocity(50, 50)
     }
 }
 function hard () {
 	
 }
+function easyMult (sec: number) {
+    EmultScore = sec * 1
+    return EmultScore
+}
+let EmultScore = 0
 let easyMeteor: Sprite = null
 let easySprite: Sprite = null
 let game2 = game.askForString("Select you difficulty. easy or hard?", 4)
 if (game2 == "easy") {
     easy()
+    easyMult(1)
 } else {
     hard()
 }
