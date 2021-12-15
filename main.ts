@@ -1,4 +1,15 @@
-function planeTicket () {
+function PS5cost (ps5Cost: number) {
+    totalCost = ps5Cost
+    return totalCost
+}
+function checkMoney () {
+    if (Money > PS5cost(500)) {
+        return true
+    } else {
+        return false
+    }
+}
+function PS5 () {
     if (checkMoney()) {
         plane = sprites.create(img`
             ....ffffff.........ccc..
@@ -39,22 +50,23 @@ function planeTicket () {
             . . . . . . . . . . . . . . . . 
             `, SpriteKind.Player)
         noPlane.sayText("No vacation.")
+        pause(2000)
+        while (Money < PS5cost(500)) {
+            askPS5 = game.askForString("Do you have more money?", 3)
+            if (askPS5 == "yes") {
+                newMoney = game.askForNumber("How much?")
+                if (newMoney > PS5cost(500)) {
+                    checkMoney()
+                }
+            }
+        }
     }
 }
-function ticketCost (ticketPrice: number) {
-    totalCost = ticketPrice
-    return totalCost
-}
-function checkMoney () {
-    if (Money > ticketCost(100)) {
-        return true
-    } else {
-        return false
-    }
-}
-let totalCost = 0
+let newMoney = 0
+let askPS5 = ""
 let noPlane: Sprite = null
 let plane: Sprite = null
+let totalCost = 0
 let Money = 0
 Money = game.askForNumber("How much money do you have?", 4)
-planeTicket()
+PS5()
