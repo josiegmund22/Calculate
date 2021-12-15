@@ -1,8 +1,9 @@
 {
-    "name": "Calculate",
+    "name": "Can you get a PS5",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "PS5 extension ": "pub:84334-27141-58253-40196"
     },
     "files": [
         "main.blocks",
